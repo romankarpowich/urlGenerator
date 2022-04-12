@@ -27,7 +27,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     container_name: app
-    command: [ "./main", "-memory=in-memory" ]
+    command: ./main -memory=${MEMORY_MODE}
     depends_on:
       - postgres
     networks:
